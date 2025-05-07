@@ -21,6 +21,14 @@ const PORT = process.env.PORT
 app.use(express.json())
 app.use(cookieParser())
 
+const cors = require('cors');
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://netflix-cone-frontend.onrender.com'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
+}));
+
+
 app.use("/api/v1/auth", authRoutes)
 app.use("/api/v1/movie", protectRoute, movieRoutes)
 app.use("/api/v1/tv", protectRoute, tvRoutes)
