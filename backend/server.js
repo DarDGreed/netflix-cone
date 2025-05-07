@@ -9,6 +9,7 @@ import cookieParser from "cookie-parser";
 import { protectRoute } from "./middleware/protectRoute.js";
 import path from "path"
 import { fileURLToPath } from "url";
+import cors from "cors";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,7 +22,6 @@ const PORT = process.env.PORT
 app.use(express.json())
 app.use(cookieParser())
 
-const cors = require('cors');
 app.use(cors({
   origin: ['http://localhost:5173', 'https://netflix-cone-frontend.onrender.com'],
   credentials: true,
