@@ -23,7 +23,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://netflix-cone-frontend.onrender.com'],
+  origin: 'https://netflix-cone-frontend.onrender.com',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE']
 }));
